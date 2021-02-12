@@ -10,7 +10,7 @@ plugins {
 }
 
 dependencies {
-    testImplementation(project(":core"))
+    testImplementation(project(":core:v2"))
     testImplementation(project(":localstack"))
     testImplementation(project(":cloudformation"))
     testImplementation(project(":dynamodb"))

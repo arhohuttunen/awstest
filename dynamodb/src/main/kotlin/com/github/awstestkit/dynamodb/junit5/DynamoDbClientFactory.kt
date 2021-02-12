@@ -1,6 +1,6 @@
 package com.github.awstestkit.dynamodb.junit5
 
-import com.github.awstestkit.AwsClientFactory
+import com.github.awstestkit.SdkClientFactory
 import software.amazon.awssdk.services.dynamodb.DynamoDbAsyncClient
 import software.amazon.awssdk.services.dynamodb.DynamoDbAsyncClientBuilder
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient
@@ -11,10 +11,10 @@ import software.amazon.awssdk.services.dynamodb.streams.DynamoDbStreamsClient
 import software.amazon.awssdk.services.dynamodb.streams.DynamoDbStreamsClientBuilder
 
 typealias DynamoDbClientFactory =
-        AwsClientFactory<DynamoDbClientBuilder, DynamoDbClient>
+        SdkClientFactory<DynamoDbClientBuilder, DynamoDbClient>
 typealias DynamoDbAsyncClientFactory =
-        AwsClientFactory<DynamoDbAsyncClientBuilder, DynamoDbAsyncClient>
+        SdkClientFactory<DynamoDbAsyncClientBuilder, DynamoDbAsyncClient>
 typealias DynamoDbStreamsClientFactory =
-        AwsClientFactory<DynamoDbStreamsClientBuilder, DynamoDbStreamsClient>
+        SdkClientFactory<DynamoDbStreamsClientBuilder, DynamoDbStreamsClient>
 typealias DynamoDbStreamsAsyncClientFactory =
-        AwsClientFactory<DynamoDbStreamsAsyncClientBuilder, DynamoDbStreamsAsyncClient>
+        SdkClientFactory<DynamoDbStreamsAsyncClientBuilder, DynamoDbStreamsAsyncClient>

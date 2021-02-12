@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    api(project(":core"))
+    api(project(":core:v2"))
     implementation(kotlin("stdlib"))
     implementation("org.junit.jupiter:junit-jupiter:5.7.1")
     implementation("software.amazon.awssdk:aws-core:2.15.71")

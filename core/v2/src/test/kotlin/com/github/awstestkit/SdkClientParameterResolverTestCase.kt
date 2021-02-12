@@ -48,8 +48,8 @@ class SdkClientParameterResolverTestCase {
     }
 
     class DummyClientParameterResolver : SdkClientParameterResolver() {
-        override val factories: Map<KClass<out SdkClient>, AwsClientFactory<*, out SdkClient>> = mapOf(
-            DummyClient::class to AwsClientFactory(DummyClientBuilder())
+        override val factories: Map<KClass<out SdkClient>, SdkClientFactory<*, out SdkClient>> = mapOf(
+            DummyClient::class to SdkClientFactory(DummyClientBuilder())
         )
     }
 }

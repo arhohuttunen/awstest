@@ -1,6 +1,6 @@
 package com.github.awstestkit.sns.junit5
 
-import com.github.awstestkit.AwsClientFactory
+import com.github.awstestkit.SdkClientFactory
 import org.junit.jupiter.api.extension.AfterAllCallback
 import org.junit.jupiter.api.extension.AfterEachCallback
 import org.junit.jupiter.api.extension.BeforeAllCallback
@@ -15,7 +15,7 @@ class SnsSetupExtension : BeforeAllCallback, AfterAllCallback, BeforeEachCallbac
     private lateinit var snsClient: SimpleSnsClient
 
     override fun beforeAll(context: ExtensionContext) {
-        val factory = AwsClientFactory<SnsClientBuilder, SnsClient>(SnsClient.builder())
+        val factory = SdkClientFactory<SnsClientBuilder, SnsClient>(SnsClient.builder())
         snsClient = SimpleSnsClient(factory.create(context))
 
         createResources(context.requiredTestClass)

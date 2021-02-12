@@ -1,6 +1,6 @@
 package com.github.awstestkit.sns.junit5
 
-import com.github.awstestkit.AwsClientFactory
+import com.github.awstestkit.SdkClientFactory
 import org.junit.jupiter.api.extension.ExtensionContext
 import org.junit.jupiter.api.extension.ParameterContext
 import org.junit.jupiter.api.extension.ParameterResolver
@@ -13,7 +13,7 @@ class TopicArnParameterResolver : ParameterResolver {
     }
 
     override fun resolveParameter(parameterContext: ParameterContext, extensionContext: ExtensionContext): Any {
-        val factory = AwsClientFactory<SnsClientBuilder, SnsClient>(SnsClient.builder())
+        val factory = SdkClientFactory<SnsClientBuilder, SnsClient>(SnsClient.builder())
         val snsClient = SimpleSnsClient(factory.create(extensionContext))
 
         val annotation = parameterContext.findAnnotation(TopicArn::class.java).get()

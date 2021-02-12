@@ -3,12 +3,11 @@ plugins {
 }
 
 dependencies {
-    api(project(":core:v2"))
+    api(project(":core:common"))
     implementation(kotlin("stdlib"))
+    implementation(kotlin("reflect"))
     implementation("org.junit.jupiter:junit-jupiter:5.7.1")
     implementation("software.amazon.awssdk:aws-core:2.15.71")
-    implementation("software.amazon.awssdk:cloudformation:2.15.71")
-    testImplementation(project(":localstack"))
-    testImplementation("org.testcontainers:localstack:1.15.2")
     testImplementation("org.assertj:assertj-core:3.19.0")
+    testImplementation("org.junit.platform:junit-platform-testkit:1.7.1")
 }

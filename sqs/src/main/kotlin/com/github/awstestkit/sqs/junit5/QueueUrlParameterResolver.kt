@@ -1,6 +1,6 @@
 package com.github.awstestkit.sqs.junit5
 
-import com.github.awstestkit.AwsClientFactory
+import com.github.awstestkit.SdkClientFactory
 import org.junit.jupiter.api.extension.ExtensionContext
 import org.junit.jupiter.api.extension.ParameterContext
 import org.junit.jupiter.api.extension.ParameterResolver
@@ -13,7 +13,7 @@ class QueueUrlParameterResolver : ParameterResolver {
     }
 
     override fun resolveParameter(parameterContext: ParameterContext, extensionContext: ExtensionContext): Any {
-        val factory = AwsClientFactory<SqsClientBuilder, SqsClient>(SqsClient.builder())
+        val factory = SdkClientFactory<SqsClientBuilder, SqsClient>(SqsClient.builder())
         val sqsClient = SimpleSqsClient(factory.create(extensionContext))
 
         val annotation = parameterContext.findAnnotation(QueueUrl::class.java).get()

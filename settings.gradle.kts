@@ -1,6 +1,8 @@
 rootProject.name = "awstestkit"
 
-include("core")
+include("core:common")
+include("core:v1")
+include("core:v2")
 include("documentation")
 include("localstack")
 include("cloudformation")
